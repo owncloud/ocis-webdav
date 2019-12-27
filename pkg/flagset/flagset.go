@@ -114,6 +114,13 @@ func ServerWithConfig(cfg *config.Config) []cli.Flag {
 			Destination: &cfg.Debug.Zpages,
 		},
 		&cli.StringFlag{
+			Name:        "http-addr",
+			Value:       "0.0.0.0:9115",
+			Usage:       "Address to bind http server",
+			EnvVar:      "WEBDAV_HTTP_ADDR",
+			Destination: &cfg.HTTP.Addr,
+		},
+		&cli.StringFlag{
 			Name:        "http-namespace",
 			Value:       "com.owncloud.web",
 			Usage:       "Set the base namespace for service discovery",
